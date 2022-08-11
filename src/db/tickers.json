@@ -1,0 +1,7 @@
+{
+  "tickers": [
+    { "title": "AAPL.US", "price": 12 },
+    { "title": "TSLA.US", "price": 12 },
+    { "title": "BMO.CA", "price": 12 }
+  ]
+}

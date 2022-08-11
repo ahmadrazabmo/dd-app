@@ -8,7 +8,7 @@ const style = {
   borderRadius: "10px",
 };
 
-const someActionOnClick = async (setShowResults, tickerValue) => {
+const actionOnClick = async (setShowResults, tickerValue) => {
   setShowResults(true);
   // // --------------------------------
   // // Broadcasting code
@@ -63,7 +63,7 @@ export default function SearchBar({ setShowResults }) {
       <Button
         variant="outlined"
         onClick={() => {
-          someActionOnClick(setShowResults, tickerValue);
+          actionOnClick(setShowResults, tickerValue);
         }}
       >
         {console.log(tickers)}

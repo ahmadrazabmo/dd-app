@@ -1,28 +1,28 @@
 [
   {
     "ticker": "AAPL",
-    "esg": { "overall": 3.6, "environment": 7.6, "social": 7.5, "governance": 8.5 },
+    "esg": { "overall": 8.1, "environment": 7.6, "social": 7.5, "governance": 8.5 },
     "morningstar": 3.6,
     "lifestyle": "H",
     "sentiment": "Neutral"
   },
   {
     "ticker": "MSFT",
-    "esg": { "overall": 3.9, "environment": 8, "social": 6.4, "governance": 8.5 },
+    "esg": { "overall": 7.5, "environment": 8, "social": 6.4, "governance": 8.5 },
     "morningstar": 1,
     "lifestyle": "H",
     "sentiment": 1
   },
   {
     "ticker": "BMO",
-    "esg": { "overall": 4.5, "environment": 9.6, "social": 9.9, "governance": 9.1 },
+    "esg": { "overall": 9.5, "environment": 9.6, "social": 9.9, "governance": 9.1 },
     "morningstar": 5,
     "lifestyle": "",
     "sentiment": "Positive"
   },
   {
     "ticker": "BYND",
-    "esg": { "overall": 4.3, "environment": 8.6, "social": 9.0, "governance": 8.8 },
+    "esg": { "overall": 8.3, "environment": 8.6, "social": 9.0, "governance": 8.8 },
     "morningstar": 4.5,
     "lifestyle": "V",
     "sentiment": "Positive"

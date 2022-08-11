@@ -10,8 +10,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <SearchBar setShowResults={setShowResults} />
-        {showResults ? <EsgTable /> : null}
+        <SearchBar
+          ticker={ticker}
+          setTicker={setTicker}
+          setShowResults={setShowResults}
+        />
+        <div style={{ paddingTop: "15px" }}>
+          {showResults ? <EsgTable ticker={ticker} /> : null}
+        </div>
       </header>
     </div>
   );

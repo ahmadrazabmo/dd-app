@@ -1,9 +1,9 @@
+import "./search.css";
 import { Autocomplete, Stack, TextField, Button } from "@mui/material";
-import { useState } from "react";
 import * as tickers from "../../db/tickers.json";
 
 const style = {
-  backgroundColor: "#212224ff",
+  backgroundColor: "white",
   padding: "20px",
   borderRadius: "10px",
 };
@@ -48,18 +48,18 @@ const broadcastContext = async (tickerValue) => {
     const systemHandler = (ctx) => {
       console.log("System Context Received: ", ctx);
     };
+    // eslint-disable-next-line no-unused-vars
     const systemListener = window.fdc3.addContextListener(null, systemHandler);
   }
 };
 
-export default function SearchBar({ setShowResults }) {
-  const [tickerValue, setTickerValue] = useState("");
+export default function SearchBar({ ticker, setTicker, setShowResults }) {
   return (
     <Stack spacing={2} sx={{ width: 300 }} style={style}>
       <Autocomplete
         freeSolo
         onInputChange={(event) => {
-          setTickerValue(event.target.innerText);
+          setTicker(event.target.value || event.target.innerText);
         }}
         options={Array.from(tickers).map((option) => option.ticker)}
         renderInput={(params) => <TextField {...params} label="ticker" />}
@@ -67,7 +67,7 @@ export default function SearchBar({ setShowResults }) {
       <Button
         variant="outlined"
         onClick={() => {
-          actionOnClick(setShowResults, tickerValue);
+          actionOnClick(setShowResults, ticker);
         }}
       >
         Search

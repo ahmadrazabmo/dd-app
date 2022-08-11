@@ -29,7 +29,6 @@ export default function EsgTable({ ticker }) {
             <TableCell align="right">Environment</TableCell>
             <TableCell align="right">Social</TableCell>
             <TableCell align="right">Governance</TableCell>
-            <TableCell align="right">Star Rating</TableCell>
             <TableCell align="right">Lifestyle</TableCell>
             <TableCell align="right">Morning Star Rating</TableCell>
             <TableCell align="right">Net Sentiment Score</TableCell>
@@ -47,11 +46,11 @@ export default function EsgTable({ ticker }) {
               <TableCell align="right">{row.esg.environment}</TableCell>
               <TableCell align="right">{row.esg.social}</TableCell>
               <TableCell align="right">{row.esg.governance}</TableCell>
-              <TableCell align="right">{row.esg.lifestyle}</TableCell>
+              <TableCell align="right">{row.lifestyle}</TableCell>
               <TableCell align="right">
                 <Rating
                   name="read-only"
-                  defaultValue={row.rate}
+                  defaultValue={row.morningstar}
                   precision={0.1}
                   readOnly
                 />

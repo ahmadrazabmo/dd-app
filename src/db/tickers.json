@@ -9,9 +9,9 @@
   {
     "ticker": "MSFT",
     "esg": { "overall": 7.5, "environment": 8, "social": 6.4, "governance": 8.5 },
-    "morningstar": 1,
+    "morningstar": 3.0,
     "lifestyle": "H",
-    "sentiment": 1
+    "sentiment": "Negative"
   },
   {
     "ticker": "BMO",

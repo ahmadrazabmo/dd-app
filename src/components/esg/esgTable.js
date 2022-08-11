@@ -38,16 +38,16 @@ export default function EsgTable({ ticker }) {
         <TableBody>
           {
             <TableRow
-              key={row.name}
+              key={row.ticker}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                {row.esg}
+                {row.esg.overall}
               </TableCell>
-              <TableCell align="right">{row.env}</TableCell>
-              <TableCell align="right">{row.social}</TableCell>
-              <TableCell align="right">{row.gov}</TableCell>
-              <TableCell align="right">{row.lifestyle}</TableCell>
+              <TableCell align="right">{row.esg.environment}</TableCell>
+              <TableCell align="right">{row.esg.social}</TableCell>
+              <TableCell align="right">{row.esg.governance}</TableCell>
+              <TableCell align="right">{row.esg.lifestyle}</TableCell>
               <TableCell align="right">
                 <Rating
                   name="read-only"

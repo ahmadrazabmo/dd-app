@@ -10,41 +10,42 @@ const style = {
 
 const actionOnClick = async (setShowResults, tickerValue) => {
   setShowResults(true);
-  // // --------------------------------
-  // // Broadcasting code
-  // // --------------------------------
-  // if (window.fdc3 !== undefined) {
-  //   const context = {
-  //     type: "fdc3.instrument",
-  //     name: "Tesla Inc",
-  //     id: {
-  //       ticker: "TSLA",
-  //       ISIN: "US88160R1014",
-  //     },
-  //   };
-  //   const systemChannel = await fdc3.getCurrentChannel();
-  //   if (systemChannel !== null) {
-  //     console.log(
-  //       "broadcasting on " +
-  //         systemChannel.type +
-  //         " channel: " +
-  //         systemChannel.id,
-  //       context
-  //     );
-  //     fdc3.broadcast(context);
-  //   } else {
-  //     console.log("You are not bound to a system channel");
-  //   }
-  // }
-  // // --------------------------------
-  // // Listening code
-  // // --------------------------------
-  // if (window.fdc3 !== undefined) {
-  //   const systemHandler = (ctx) => {
-  //     console.log("System Context Received: ", ctx);
-  //   };
-  //   const systemListener = fdc3.addContextListener(null, systemHandler);
-  // }
+  // --------------------------------
+  // Broadcasting code
+  // --------------------------------
+  if (window.fdc3 !== undefined) {
+    console.log("ticker object: ", tickerValue);
+    const context = {
+      type: "instrument",
+      name: "Tesla Inc",
+      id: {
+        ticker: tickerValue,
+        ISIN: "US88160R1014",
+      },
+    };
+    const systemChannel = await window.fdc3.getCurrentChannel();
+    if (systemChannel !== null) {
+      console.log(
+        "broadcasting on " +
+          systemChannel.type +
+          " channel: " +
+          systemChannel.id,
+        context
+      );
+      window.fdc3.broadcast(context);
+    } else {
+      console.log("You are not bound to a system channel");
+    }
+  }
+  // --------------------------------
+  // Listening code
+  // --------------------------------
+  if (window.fdc3 !== undefined) {
+    const systemHandler = (ctx) => {
+      console.log("System Context Received: ", ctx);
+    };
+    const systemListener = window.fdc3.addContextListener(null, systemHandler);
+  }
 };
 
 export default function SearchBar({ setShowResults }) {
@@ -55,7 +56,7 @@ export default function SearchBar({ setShowResults }) {
       <Autocomplete
         freeSolo
         onInputChange={(event) => {
-          setTickerValue(event.target.value);
+          setTickerValue(event.target.innerText);
         }}
         options={tickers.map((option) => option.ticker)}
         renderInput={(params) => <TextField {...params} label="ticker" />}
@@ -74,7 +75,7 @@ export default function SearchBar({ setShowResults }) {
 }
 
 const tickers = [
-  { ticker: "AAPL.US", price: 12.32 },
-  { ticker: "TSLA.US", price: 141.21 },
-  { ticker: "BMO.CA", price: 251.23 },
+  { ticker: "AAPL", price: 12.32 },
+  { ticker: "TSLA", price: 141.21 },
+  { ticker: "BMO", price: 251.23 },
 ];

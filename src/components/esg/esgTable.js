@@ -49,6 +49,12 @@ export default function EsgTable() {
               <TableCell align="right">{row.sentiment}</TableCell>
             </TableRow>
           ))}
+          <TableRow rowSpan={1} align="right">
+            <TableCell align="right" colSpan={5} class="legend">H - Halal </TableCell>
+          </TableRow>
+          <TableRow rowSpan={1} align="right">
+            <TableCell align="right" colSpan={5} class="legend">V - Vegan </TableCell>
+          </TableRow>
         </TableBody>
       </Table>
     </TableContainer>

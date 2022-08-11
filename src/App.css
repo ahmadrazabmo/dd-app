@@ -19,3 +19,11 @@
 .App-link {
   color: #61dafb;
 }
+
+.legend {
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 200;
+  font-size: 0.775rem;
+  line-height: 1;
+  letter-spacing: 0.01071em;
+}

@@ -1,7 +1,20 @@
-{
-  "tickers": [
-    { "title": "AAPL.US", "price": 12 },
-    { "title": "TSLA.US", "price": 12 },
-    { "title": "BMO.CA", "price": 12 }
-  ]
-}
+[
+  {
+    "ticker": "AAPL",
+    "esg": { "environment": 1, "social": 1, "governance": 8.5 },
+    "morningstar": 1,
+    "sentiment": 0
+  },
+  {
+    "ticker": "TSLA",
+    "esg": { "environment": 1, "social": 1, "governance": 8.5 },
+    "morningstar": 1,
+    "sentiment": 1
+  },
+  {
+    "ticker": "BMO",
+    "esg": { "environment": 1, "social": 1, "governance": 8.5 },
+    "morningstar": 1,
+    "sentiment": 2
+  }
+]

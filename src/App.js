@@ -4,6 +4,7 @@ import EsgTable from "./components/esg/esgTable";
 import { useState } from "react";
 
 function App() {
+  const [ticker, setTicker] = useState(null);
   const [showResults, setShowResults] = useState(false);
 
   return (

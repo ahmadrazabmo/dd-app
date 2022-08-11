@@ -10,14 +10,18 @@ const style = {
 
 const actionOnClick = async (setShowResults, tickerValue) => {
   setShowResults(true);
-  // --------------------------------
+  broadcastContext(tickerValue);
+};
+
+const broadcastContext = async (tickerValue) => {
+// --------------------------------
   // Broadcasting code
   // --------------------------------
   if (window.fdc3 !== undefined) {
     console.log("ticker object: ", tickerValue);
     const context = {
       type: "instrument",
-      name: "Tesla Inc",
+      name: "Symbol Name",
       id: {
         ticker: tickerValue,
         ISIN: "US88160R1014",

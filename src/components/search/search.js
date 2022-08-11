@@ -1,6 +1,6 @@
 import { Autocomplete, Stack, TextField, Button } from "@mui/material";
 import { useState } from "react";
-// import * as tickers from "../../db/tickers.json";
+import * as tickers from "../../db/tickers.json";
 
 const style = {
   backgroundColor: "#212224ff",
@@ -54,7 +54,6 @@ const broadcastContext = async (tickerValue) => {
 
 export default function SearchBar({ setShowResults }) {
   const [tickerValue, setTickerValue] = useState("");
-
   return (
     <Stack spacing={2} sx={{ width: 300 }} style={style}>
       <Autocomplete
@@ -62,7 +61,7 @@ export default function SearchBar({ setShowResults }) {
         onInputChange={(event) => {
           setTickerValue(event.target.innerText);
         }}
-        options={tickers.map((option) => option.ticker)}
+        options={Array.from(tickers).map((option) => option.ticker)}
         renderInput={(params) => <TextField {...params} label="ticker" />}
       />
       <Button
@@ -71,15 +70,8 @@ export default function SearchBar({ setShowResults }) {
           actionOnClick(setShowResults, tickerValue);
         }}
       >
-        {console.log(tickers)}
         Search
       </Button>
     </Stack>
   );
 }
-
-const tickers = [
-  { ticker: "AAPL", price: 12.32 },
-  { ticker: "TSLA", price: 141.21 },
-  { ticker: "BMO", price: 251.23 },
-];
